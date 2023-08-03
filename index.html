@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Formulário</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<main>
+			<h1>Cadastre-se</h1>
+			<form action="/submit_data" method="post">
+				<div class="label-group">
+					<label for="name"></label>
+					<input
+						placeholder="Nome"
+						type="text"
+						id="name"
+						name="name"
+						required />
+				</div>
+
+				<div class="label-group">
+					<label for="email"></label>
+					<input
+						placeholder="E-mail"
+						type="email"
+						id="email"
+						name="email"
+						required />
+				</div>
+
+				<div class="label-group">
+					<label for="phone"></label>
+					<input
+						placeholder="Telefone"
+						type="tel"
+						id="phone"
+						name="phone"
+						required />
+				</div>
+
+				<div class="label-group">
+					<label for="street"></label>
+					<input
+						placeholder="Rua"
+						type="text"
+						id="street"
+						name="street"
+						required />
+				</div>
+
+				<div class="label-group">
+					<label for="number"></label>
+					<input
+						placeholder="Número"
+						type="text"
+						id="number"
+						name="number"
+						required />
+				</div>
+
+				<div class="label-group">
+					<label for="complement"></label>
+					<input
+						placeholder="Complemento"
+						type="text"
+						id="complement"
+						name="complement" />
+				</div>
+
+				<div class="label-group">
+					<label for="city"></label>
+					<input
+						placeholder="Cidade"
+						type="text"
+						id="city"
+						name="city"
+						required />
+				</div>
+
+				<div class="label-group">
+					<label for="zip"></label>
+					<input placeholder="Cep" type="text" id="zip" name="zip" required />
+				</div>
+
+				<input type="submit" value="Enviar" />
+			</form>
+		</main>
+	</body>
+</html>
