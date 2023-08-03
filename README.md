@@ -1,4 +1,4 @@
-# TI360-Challenger
+![image](https://github.com/Lucs25/TI360-Challenger/assets/93219618/27f688e9-2262-4e58-95b8-f7bd0fd3293d)# TI360-Challenger
 
 
 ## Table of contents
@@ -26,11 +26,11 @@ Users must be able to:
 
  ### Desktop
 
-![Design preview for the Product preview card component coding challenge](./img/desktop-design.png)
+![Design preview for the Product preview card component coding challenge](./img/desktop-design.PNG)
 
 ### Mobile
 
-![Design preview for the Product preview card component coding challenge](./img/mobile-design.png)
+![Design preview for the Product preview card component coding challenge](./img/mobile-design.PNG)
 
 ### Links
 
