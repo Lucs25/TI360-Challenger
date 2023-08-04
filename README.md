@@ -1,17 +1,17 @@
-![image](https://github.com/Lucs25/TI360-Challenger/assets/93219618/27f688e9-2262-4e58-95b8-f7bd0fd3293d)# TI360-Challenger
-
+# TI360-Challenger
 
 ## Table of contents
-  - [Overview](#Overview)
+- [TI360-Challenger](#ti360-challenger)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
     - [The challenger](#the-challenger)
 - [Screenshot](#screenshot)
-  - [Links](#links)
-  - [Desktop](#desktop)
-  - [Mobile](#mobile)
-  - [Links](#links)
-- [Continued development](#continued-development)
-  - [Useful resources:](#useful-resources)
-  - [Author:](#author) 
+    - [Desktop](#desktop)
+    - [Mobile](#mobile)
+    - [Links](#links)
+- [Continued development:](#continued-development)
+    - [Useful resources:](#useful-resources)
+    - [Author:](#author)
 
 ## Overview
 

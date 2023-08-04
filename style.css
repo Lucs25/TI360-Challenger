@@ -7,61 +7,76 @@
 }
 
 :root {
-	--margin-group-label: 20px 0;
-	--background-main: hsl(199, 92%, 46%);
+	--background-color: #e9640c;
 	--border-radius: 8px;
 }
 
 body {
-	background: rgb(2, 2, 44);
+	background: url('./img/beach-desktop.jpg');
+	background-position: left center;
+	backdrop-filter: blur(0.5px);
+	-webkit-backdrop-filter: blur(0.5px);
 }
 
 main {
+	background-color: rgba(255, 255, 255, 0.2);
 	padding: 20px;
-	color: #fff;
-	background: var(--background-main);
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
 	max-width: 500px;
 }
 
 h1 {
+	color: var(--background-color);
 	font-size: 32px;
 	text-align: center;
 }
 
-.label-group {
-	margin: var(--margin-group-label);
-}
-
 input {
+	display: flex;
 	width: 100%;
 	padding: 10px;
+	margin: 10px 0;
 	border-radius: var(--border-radius);
-	border: 1px solid #030175;
+	border: 1px solid var(--background-color);
+}
+
+input:hover {
+	transform: scale(1.1);
+	transition: 0.3s;
+	border-color: var(--background-color);
 }
 
 input[type*='submit'] {
 	width: 100%;
-	padding: 15px 0;
-	margin-top: 10px;
-	background: rgba(1, 38, 87, 0.5);
+	padding: 15px 0 15px 10px;
+	margin-top: 15px;
+	background: var(--background-color);
 	border: none;
+	justify-content: center;
 	color: #fff;
 	font-weight: 700;
 	cursor: pointer;
 }
 
 input[type*='submit']:hover {
-	background: rgba(1, 38, 87, 1);
-	transition: 2s;
+	background: #8b3f0c;
+	transition: 0.3s;
 }
 
 @media (min-width: 500px) {
 	main {
 		padding: 10px;
-		margin: 5px auto;
+		margin: 50px auto;
 		border-radius: var(--border-radius);
+	}
+
+	form {
+		margin: 0 10px;
+	}
+
+	.phones,
+	.adress,
+	.uf {
+		display: flex;
+		justify-content: space-between;
 	}
 }
