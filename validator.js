@@ -11,79 +11,127 @@ const cityInput = document.querySelector('#city');
 const zipInput = document.querySelector('#zip');
 const error = document.querySelector('#error');
 
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-  nameValidate();
-  emailValidate();
-  passwordValidate();
-  phoneValidate();
-  cellPhoneValidate();
-  streetValidate();
-  numberAddressValidate();
-  zipValidate();
-});
+const showError = (input) => {
+  input.nextElementSibling.classList.remove('error-hidden');
+};
+
+const hideError = (input) => {
+  input.nextElementSibling.classList.add('error-hidden');
+};
 
 const nameValidate = () => {
-  if (!nameInput.value)
-    nameInput.nextElementSibling.classList.remove('error-hidden');
-  else nameInput.nextElementSibling.classList.add('error-hidden');
+  if (!nameInput.value) {
+    showError(nameInput);
+    return false;
+  } else {
+    hideError(nameInput);
+    return true;
+  }
 };
 
-const emailValidate = (email) => {
-  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}$/;
-  if (emailInput.value === '' || emailInput.length) {
-    emailInput.nextElementSibling.classList.remove('error-hidden');
-    return emailRegex.test(String(email).toLocaleLowerCase());
-  } else return emailInput.nextElementSibling.classList.add('error-hidden');
+const emailValidate = () => {
+  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const email = emailInput.value.trim();
+
+  if (email === '' || !emailRegex.test(email.toLowerCase())) {
+    showError(emailInput);
+    return false;
+  } else {
+    hideError(emailInput);
+    return true;
+  }
 };
 
-const passwordValidate = (password) => {
-  if (password === '') {
-    return passwordInput.nextElementSibling.classList.add('error-hidden');
-  } else
-    return passwordInput.nextElementSibling.classList.remove('error-hidden');
+const passwordValidate = () => {
+  if (passwordInput.value === '' || passwordInput.value.length <= 8) {
+    showError(passwordInput);
+    return false;
+  } else {
+    hideError(passwordInput);
+    return true;
+  }
 };
 
-//VALIDAR
-const phoneValidate = (phone) => {
-  const regexPhone = /^\(\d{2}\) ?(?:\d{4}-\d{4}|\d \d{4}-\d{4})$/;
-  if (phone === '') {
-    return phoneInput.nextElementSibling.classList.add('erro-hidden');
-  } else phoneInput.nextElementSibling.classList.remove('error-hidden');
-  regexPhone.test(phone);
-  console.log('ok');
-  return;
+const phoneValidate = () => {
+  const regexPhone = /^\d{2}-\d{8}$/;
+  const phone = phoneInput.value.trim();
+
+  if (phone === '' || !regexPhone.test(phone)) {
+    showError(phoneInput);
+    return false;
+  } else {
+    hideError(phoneInput);
+    return true;
+  }
 };
 
-//VALIDAR
-const cellPhoneValidate = (cellphone) => {
-  const regexCelPhone = /^[0-9.-]$/;
-  if (cellPhoneInput.value === '' || cellPhoneInput.length) {
-    cellPhoneInput.nextElementSibling.classList.remove('error-hidden');
-    return regexCelPhone.test(cellphone);
-  } else return cellPhoneInput.nextElementSibling.classList.add('error-hidden');
+const cellPhoneValidate = () => {
+  const regexCellPhone = /^\d{2}-\d{9}$/;
+  const cellPhone = cellPhoneInput.value.trim();
+
+  if (cellPhone === '' || !regexCellPhone.test(cellPhone)) {
+    showError(cellPhoneInput);
+    return false;
+  } else {
+    hideError(cellPhoneInput);
+    return true;
+  }
 };
 
-const streetValidate = (street) => {
-  const regexStreet = /^[a-zA-Z:]$/;
-  if (streetInput.value === '' || streetInput.length) {
-    streetInput.nextElementSibling.classList.remove('error-hidden');
-    return regexStreet.test(street);
-  } else return streetInput.nextElementSibling.classList.add('error-hidden');
-};
-const numberAddressValidate = (numberAdress) => {
-  const regexAddress = /^[a-zA-Z:]$/;
-  if (numberAddressInput.value === '' || numberAddressInput.length) {
-    numberAddressInput.nextElementSibling.classList.remove('error-hidden');
-    return regexAddress.test(numberAdress);
-  } else
-    return numberAddressInput.nextElementSibling.classList.add('error-hidden');
+const streetValidate = () => {
+  const regexStreet = /^[a-zA-Z\s]+$/;
+  const street = streetInput.value.trim();
+
+  if (street === '' || !regexStreet.test(street)) {
+    showError(streetInput);
+    return false;
+  } else {
+    hideError(streetInput);
+    return true;
+  }
 };
 
-const zipValidate = (zip) => {
-  const regexNumberAdress = /^[0-9]$/;
-  if (zipInput.value === '' || zipInput.length) {
-    zipInput.nextElementSibling.classList.remove('error-hidden');
-    return regexNumberAdress.test(zip);
-  } else return zipInput.nextElementSibling.classList.add('error-hidden');
+const numberAddressValidate = () => {
+  const regexNumberAddress = /^[a-zA-Z0-9]+$/;
+  const numberAddress = numberAddressInput.value.trim();
+
+  if (numberAddress === '' || !regexNumberAddress.test(numberAddress)) {
+    showError(numberAddressInput);
+    return false;
+  } else {
+    hideError(numberAddressInput);
+    return true;
+  }
 };
+
+const zipValidate = () => {
+  const regexZip = /^[0-9]+$/;
+  const zip = zipInput.value.trim();
+
+  if (zip === '' || !regexZip.test(zip)) {
+    showError(zipInput);
+    return false;
+  } else {
+    hideError(zipInput);
+    return true;
+  }
+};
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  if (
+    nameValidate() &&
+    emailValidate() &&
+    passwordValidate() &&
+    phoneValidate() &&
+    cellPhoneValidate() &&
+    streetValidate() &&
+    numberAddressValidate() &&
+    zipValidate()
+  ) {
+    console.log('Formulário válido. Enviar...');
+  } else {
+    console.log('Formulário inválido. Corrija os campos destacados.');
+  }
+});

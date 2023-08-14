@@ -37,6 +37,11 @@ input {
   border: 2px solid var(--background-color);
 }
 
+label p {
+  color: #f00;
+  font-weight: 700;
+}
+
 input:hover {
   transform: scale(1.02);
   transition: 0.5s;
@@ -62,7 +67,6 @@ input[type*='submit']:hover {
 
 .error-hidden {
   display: none;
-  color: #f11;
 }
 
 @media (min-width: 500px) {
