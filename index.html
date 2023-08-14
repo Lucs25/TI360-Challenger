@@ -1,101 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Formulário</title>
-		<link rel="stylesheet" href="style.css" />
-	</head>
-	<body>
-		<main>
-			<h1>Cadastre-se</h1>
-			<form action="/submit_data" method="post">
-				<div class="label-group">
-					<label for="name">
-						<input
-							placeholder="Nome"
-							type="text"
-							id="name"
-							name="name"
-							required />
-					</label>
-				</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Cadastre-se</h1>
+      <form action="/submit_data" method="post" id="form">
+        <div class="label-group">
+          <label for="name">
+            <input placeholder="Nome" type="text" id="name" />
+            <p class="error-hidden">Nome Obrigatório</p>
+          </label>
+        </div>
 
-				<div class="label-group">
-					<label for="email">
-						<input
-							placeholder="E-mail"
-							type="email"
-							id="email"
-							name="email"
-							required />
-					</label>
-				</div>
+        <div class="label-group">
+          <label for="email">
+            <input placeholder="E-mail" type="email" id="email" name="email" />
+            <p class="error-hidden">Insira um e-mail válido</p>
+          </label>
+        </div>
 
-				<div class="label-group phones">
-					<label for="phone">
-						<input
-							placeholder="Telefone"
-							type="tel"
-							id="phone"
-							name="phone"
-							required />
-					</label>
-					<label for="cell-phone">
-						<input
-							placeholder="Celular"
-							type="tel"
-							id="cell-phone"
-							name="cell-phone"
-							required />
-					</label>
-				</div>
+        <div class="label-group">
+          <label for="password">
+            <input
+              placeholder="Crie sua senha"
+              type="password"
+              id="password"
+              name="password" />
+            <p class="error-hidden">Insira uma senha acima de 8 digítos</p>
+          </label>
+        </div>
 
-				<div class="label-group">
-					<label for="street">
-						<input
-							placeholder="Rua"
-							type="text"
-							id="street"
-							name="street"
-							required />
-					</label>
-				</div>
+        <div class="label-group phones">
+          <label for="phone">
+            <input placeholder="Telefone" type="tel" id="phone" name="phone" />
+            <p class="error-hidden">Insira apenas os digítos</p>
+          </label>
+          <label for="cell-phone">
+            <input
+              placeholder="Celular"
+              type="tel"
+              id="cell-phone"
+              name="cell-phone" />
+            <p class="error-hidden">Insira apenas os digítos</p>
+          </label>
+        </div>
 
-				<div class="label-group adress">
-					<label for="number">
-						<input
-							placeholder="Número"
-							type="number"
-							id="number"
-							name="number"
-							required />
-					</label>
-					<label for="complement">
-						<input
-							placeholder="Complemento"
-							type="text"
-							id="complement"
-							name="complement" />
-					</label>
-				</div>
+        <div class="label-group uf">
+          <label for="zip">
+            <input placeholder="Cep" type="text" id="zip" name="zip" />
+            <p class="error-hidden">Insira apenas números</p>
+          </label>
+          <label for="city">
+            <input placeholder="Cidade" type="text" id="city" name="city" />
+          </label>
+        </div>
 
-				<div class="label-group uf">
-					<label for="city">
-						<input
-							placeholder="Cidade"
-							type="text"
-							id="city"
-							name="city"
-							required />
-					</label>
-					<label for="zip">
-						<input placeholder="Cep" type="text" id="zip" name="zip" required />
-					</label>
-				</div>
+        <div class="label-group">
+          <label for="street">
+            <input placeholder="Rua" type="text" id="street" name="street" />
+            <p class="error-hidden">Insira apenas letras</p>
+          </label>
+        </div>
 
-				<input type="submit" value="Enviar" />
-			</form>
-		</main>
-	</body>
+        <div class="label-group adress">
+          <label for="number-address">
+            <input
+              placeholder="Número"
+              type="number-address"
+              id="number-address"
+              name="number" />
+            <p class="error-hidden">Insira apenas os digítos</p>
+          </label>
+          <label for="complement">
+            <input
+              placeholder="Complemento"
+              type="text"
+              id="complement"
+              name="complement" />
+          </label>
+        </div>
+
+        <input type="submit" value="Enviar" id="btn-submit" />
+      </form>
+    </main>
+    <script src="validator.js"></script>
+  </body>
 </html>
